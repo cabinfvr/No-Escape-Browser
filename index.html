@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<HTML>
+	<HEAD>
+	    <title>
+	        NO ESCAPE
+	    </title>
+	    <style>@import url('https://fonts.googleapis.com/css2?family=Courier+Prime&display=swap');
+	        body {
+	            color:red;
+	            background:black;
+	            font-family: 'Courier Prime', monospace;
+	        }
+	    </style>
+	</HEAD>
+	<BODY><h1>
+		<div id="txt">
+		    
+		<script>
+			var b, c, e, l, lbl, s, x;
+	
+	x = document.getElementById('txt');
+	// ELEMENT
+	l = 'THERE IS NO ESCAPE,  ENJOY THE LAST MINUTES OF YOUR BROWSER. YOU CANT LEAVE THIS BROWSER TAB, AND YOUR KEYBOARD IS DISABLED. DO YOU WANT TO ENJOY YOUR BROWSER ONE LAST TIME?';
+	// TEXT
+	s = 250;
+	// SPEED
+	b = '';
+	//DONT TOUCH
+	e = 0;
+	//DONT TOUCH
+	c = 0;
+	//DONT TOUCH
+	lbl = function() {
+	  c = l.charAt(e);
+	  e++;
+	  b += c;
+	  x.innerHTML = b;
+	  if (l.length !== e) {
+	    setTimeout((function() {
+	      lbl();
+	    }), s);
+	  }
+	};
+	
+	if (l.length !== e) {
+	  setTimeout((function() {
+	    lbl();
+	  }), s);
+	}
+	document.onkeydown = function (e) {
+	    new Notification("You can't escape.")
+	    return false;
+}
+	/* Letter By Letter Engine
+	 By Void on Codepen,
+	 
+	 https://codepen.io/e-penboi
+	 */
+	 console.log("Disclaimer:")
+	 console.log(`
+	 This doesn't actually encrypt your files, just disables your keyboard and makes it really
+	 difficult to close the tab.
+	 `)
+	 window.onbeforeunload = function() {
+	     alert("You cant leave just yet.");
+	     return "You can't leave just yet.";
+};
+
+	 
+		</script>
+</div></h1><style>
+    h1 {
+        text-decoration:none;
+        font-weight:normal;
+    }
+</style>
+	</BODY>
+</HTML>
